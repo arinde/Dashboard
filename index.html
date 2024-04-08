@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter's Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="hero">
+        <header>
+            <div class="logo">
+                <h2>BallotBlock</h2>
+            </div>
+            <nav class="navigations">
+                <!-- for mobile screen -->
+                <div class="hamb">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 12H21M3 6H21M3 18H21" stroke="#344054" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Statistics</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <div class="profile-img">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
+                        <path opacity="0.4" d="M16 29.7316C23.3638 29.7316 29.3333 23.7621 29.3333 16.3983C29.3333 9.03448 23.3638 3.06494 16 3.06494C8.63619 3.06494 2.66666 9.03448 2.66666 16.3983C2.66666 23.7621 8.63619 29.7316 16 29.7316Z" fill="#7E82A0"/>
+                        <path d="M16 9.63818C13.24 9.63818 11 11.8782 11 14.6382C11 17.3448 13.12 19.5449 15.9333 19.6249C15.9733 19.6249 16.0267 19.6249 16.0533 19.6249C16.08 19.6249 16.12 19.6249 16.1467 19.6249C16.16 19.6249 16.1733 19.6249 16.1733 19.6249C18.8667 19.5315 20.9867 17.3448 21 14.6382C21 11.8782 18.76 9.63818 16 9.63818Z" fill="#7E82A0"/>
+                        <path d="M25.04 26.1979C22.6667 28.3846 19.4934 29.7313 16 29.7313C12.5067 29.7313 9.33336 28.3846 6.96002 26.1979C7.28002 24.9846 8.14669 23.8779 9.41336 23.0246C13.0534 20.5979 18.9734 20.5979 22.5867 23.0246C23.8667 23.8779 24.72 24.9846 25.04 26.1979Z" fill="#7E82A0"/>
+                    </svg>
+                </div>
+                <div class="dropdown-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                        <path d="M5.91754 8.43242L9.79806 12.7908C9.9096 12.9161 10.0904 12.9161 10.202 12.7908L14.0824 8.43242C14.2623 8.23031 14.135 7.88477 13.8804 7.88477H6.11952C5.86504 7.88477 5.73761 8.23032 5.91754 8.43242Z" fill="#094357"/>
+                    </svg>
+                </div>
+            </div>
+        </header>
+    </div>
+    <main>
+        <div class="dashboard-container">
+            <div class="welcome-info">
+                <h3>Welcome, Lulu Bridget</h3>
+                <div class="polling">
+                    <p class="unit-name"><span>Polling unit:</span> Central school, Alor</p>
+                    <p class="unit-no"><span>Polling unit No:</span> 025</p>
+                </div>
+            </div>
+            <div class="vote">
+                <div class="vote-text">
+                    <h3>Presidential, Senate and house of  representative election</h3>
+                    <legend>Enter your Voters Identification Number (VIN) or National Identification Number(NIN)</legend>
+                    <button><a href="voting page/voting.html">Vote</a></button>
+                </div>
+                <div class="vote-timing">
+                    <p>Time Remaining</p>
+                    <div class="timer">
+                        <div class="hour time">
+                            <span id="hours">0</span>
+                            <span>Hrs:</span>
+                        </div>
+                        <div class="min time">
+                            <span id="mins">0</span>
+                            <span>mins:</span>
+                        </div>
+                        <div class="sec time">
+                            <span id="secs">0</span>
+                            <span>secs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="live-result">
+                <div class="result-heading">
+                    <h3>Live Results</h3>
+					<select onchange="toggleLGA(this);" name="state" id="state" class="form-control">
+						<option value="" selected="selected">Filter by state</option>
+						<option value="Abia">Abia</option>
+						<option value="Adamawa">Adamawa</option>
+						<option value="AkwaIbom">AkwaIbom</option>
+						<option value="Anambra">Anambra</option>
+						<option value="Bauchi">Bauchi</option>
+                        <option value="Bayelsa">Bayelsa</option>
+                        <option value="Benue">Benue</option>
+                        <option value="Borno">Borno</option>
+                        <option value="Cross River">Cross River</option>
+                        <option value="Delta">Delta</option>
+                        <option value="Ebonyi">Ebonyi</option>
+                        <option value="Edo">Edo</option>
+                        <option value="Ekiti">Ekiti</option>
+                        <option value="Enugu">Enugu</option>
+                        <option value="FCT">FCT</option>
+                        <option value="Gombe">Gombe</option>
+                        <option value="Imo">Imo</option>
+                        <option value="Jigawa">Jigawa</option>
+                        <option value="Kaduna">Kaduna</option>
+                        <option value="Kano">Kano</option>
+                        <option value="Katsina">Katsina</option>
+                        <option value="Kebbi">Kebbi</option>
+                        <option value="Kogi">Kogi</option>
+                        <option value="Kwara">Kwara</option>
+                        <option value="Lagos">Lagos</option>
+                        <option value="Nasarawa">Nasarawa</option>
+                        <option value="Niger">Niger</option>
+                        <option value="Ogun">Ogun</option>
+                        <option value="Ondo">Ondo</option>
+                        <option value="Osun">Osun</option>
+                        <option value="Oyo">Oyo</option>
+                        <option value="Plateau">Plateau</option>
+                        <option value="Rivers">Rivers</option>
+                        <option value="Sokoto">Sokoto</option>
+                        <option value="Taraba">Taraba</option>
+                        <option value="Yobe">Yobe</option>
+                        <option value="Zamfara">Zamafara</option>
+					</select>
+                </div>
+                <div class="result-container">
+                    <div class="result">
+                        <div class="result-box">
+                            <div class="r-heading">
+                                <h4>Presidential elections</h4>
+                                <span>Anambra State</span>
+                            </div>
+                            <div class="counted-vote">
+                                <small>Counted Votes</small>
+                                <div class="number">
+                                    <span>1,563,245</span>
+                                </div>
+                                <div class="change">
+                                    <div class="chart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                            <path d="M10.0001 16.6023V4.93567M10.0001 4.93567L4.16675 10.769M10.0001 4.93567L15.8334 10.769" stroke="#12B76A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <small>60%</small>
+                                    </div>
+                                    <span>Labour Party</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="result-box">
+                            <div class="r-heading">
+                                <h4>Senate election</h4>
+                                <span>Anambra Central</span>
+                            </div>
+                            <div class="counted-vote">
+                                <small>Counted Votes</small>
+                                <div class="number">
+                                    <span>65,567</span>
+                                </div>
+                                <div class="change">
+                                    <div class="chart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                            <path d="M10.0001 16.6023V4.93567M10.0001 4.93567L4.16675 10.769M10.0001 4.93567L15.8334 10.769" stroke="#12B76A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <small>45%</small>
+                                    </div>
+                                    <span>APGA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="result-box">
+                            <div class="r-heading">
+                                <h4>House of Representative</h4>
+                                <span>Idemmili North/South</span>
+                            </div>
+                            <div class="counted-vote">
+                                <small>Counted Votes</small>
+                                <div class="number">
+                                    <span>35,890</span>
+                                </div>
+                                <div class="change">
+                                    <div class="chart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                                            <path d="M10.0001 16.6023V4.93567M10.0001 4.93567L4.16675 10.769M10.0001 4.93567L15.8334 10.769" stroke="#12B76A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <small>52%</small>
+                                    </div>
+                                    <span>Labour Party</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="state-statistics">
+                <div class="stat-heading">
+                    <h3>Anambra State</h3>
+					<select onchange="toggleLGA(this);" name="state" id="state" class="state-list">
+						<option value="" selected="selected">Filter by state</option>
+						<option value="Abia">Abia</option>
+						<option value="Adamawa">Adamawa</option>
+						<option value="AkwaIbom">AkwaIbom</option>
+						<option value="Anambra">Anambra</option>
+						<option value="Bauchi">Bauchi</option>
+                        <option value="Bayelsa">Bayelsa</option>
+                        <option value="Benue">Benue</option>
+                        <option value="Borno">Borno</option>
+                        <option value="Cross River">Cross River</option>
+                        <option value="Delta">Delta</option>
+                        <option value="Ebonyi">Ebonyi</option>
+                        <option value="Edo">Edo</option>
+                        <option value="Ekiti">Ekiti</option>
+                        <option value="Enugu">Enugu</option>
+                        <option value="FCT">FCT</option>
+                        <option value="Gombe">Gombe</option>
+                        <option value="Imo">Imo</option>
+                        <option value="Jigawa">Jigawa</option>
+                        <option value="Kaduna">Kaduna</option>
+                        <option value="Kano">Kano</option>
+                        <option value="Katsina">Katsina</option>
+                        <option value="Kebbi">Kebbi</option>
+                        <option value="Kogi">Kogi</option>
+                        <option value="Kwara">Kwara</option>
+                        <option value="Lagos">Lagos</option>
+                        <option value="Nasarawa">Nasarawa</option>
+                        <option value="Niger">Niger</option>
+                        <option value="Ogun">Ogun</option>
+                        <option value="Ondo">Ondo</option>
+                        <option value="Osun">Osun</option>
+                        <option value="Oyo">Oyo</option>
+                        <option value="Plateau">Plateau</option>
+                        <option value="Rivers">Rivers</option>
+                        <option value="Sokoto">Sokoto</option>
+                        <option value="Taraba">Taraba</option>
+                        <option value="Yobe">Yobe</option>
+                        <option value="Zamfara">Zamafara</option>
+					</select>
+                </div>
+                <div class="election-category">
+                    <span class="active">Presidential</span>
+                    <span>Senate Elections</span>
+                    <span>House of Representative</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/Dashboard/script.js"></script>
+</body>
+</html>
